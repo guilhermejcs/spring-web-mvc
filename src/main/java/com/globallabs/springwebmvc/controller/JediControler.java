@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
@@ -42,13 +43,15 @@ public class JediControler {
     }
 
     @PostMapping("/jedi")
-    public String createJedi(@Valid @ModelAttribute Jedi jedi, BindingResult result){
+    public String createJedi(@Valid @ModelAttribute Jedi jedi, BindingResult result, RedirectAttributes redirectAttributes){
 
         if(result.hasErrors()){
             return "new-jedi";
         }
 
         repository.add(jedi);
+
+        redirectAttributes.addFlashAttribute("message", "Jedi cadastrado com sucesso");
 
         return "redirect:jedi";
     }
