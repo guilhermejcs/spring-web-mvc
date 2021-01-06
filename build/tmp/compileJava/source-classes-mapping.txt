@@ -1,3 +1,7 @@
+com/globallabs/springwebmvc/repository/JediRepository.java
+ com.globallabs.springwebmvc.repository.JediRepository
+com/globallabs/springwebmvc/model/Jedi.java
+ com.globallabs.springwebmvc.model.Jedi
 com/globallabs/springwebmvc/controller/JediControler.java
  com.globallabs.springwebmvc.controller.JediControler
 com/globallabs/springwebmvc/SpringWebMvcApplication.java
